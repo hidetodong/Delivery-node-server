@@ -1,12 +1,12 @@
 const allSqlAction = require("../config/db")
 
-async function findUser(phone, password) {
-    let sql = `select * from user`
+async function getStation() {
+    let sql = `select * from station`
     return await allSqlAction.allSqlAction(sql).then(res => {
         return res
     })
 }
 
 module.exports = {
-    findUser
+    getStation
 }
