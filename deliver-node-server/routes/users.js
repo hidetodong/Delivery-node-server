@@ -13,9 +13,7 @@ router.get('/bar', function (ctx, next) {
 router.get('/new', async (ctx, next) => {
   let data =  await user.findUser(ctx,next)
   ctx.set("Content-Type", "application/json")
-  ctx.body = {
-    name:data
-  }
+  ctx.body = data
 })
 
 module.exports = router

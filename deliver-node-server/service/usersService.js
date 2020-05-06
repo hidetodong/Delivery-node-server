@@ -1,7 +1,7 @@
 const allSqlAction = require("../config/db")
 
 async function findUser(phone, password) {
-    let sql = `select * from user`
+    let sql = `select * from mission`
     return await allSqlAction.allSqlAction(sql).then(res => {
         return res
     })
