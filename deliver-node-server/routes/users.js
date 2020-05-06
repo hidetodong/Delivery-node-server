@@ -11,16 +11,8 @@ router.get('/bar', function (ctx, next) {
   ctx.body = 'this is a users/bar response'
 })
 router.get('/new', async (ctx, next) => {
-  // ctx.body = '这是一个新的接口！'
-  await next()
-   let data = user.findUser(ctx,next)
-  // let data = [{
-  //   name:'1'
-  // },{
-  //   name:'2'
-  // }]
+  let data =  await user.findUser(ctx,next)
   ctx.set("Content-Type", "application/json")
-  console.log('123')
   ctx.body = {
     name:data
   }
